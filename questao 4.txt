@@ -1,0 +1,48 @@
+# Função para realizar a adição e multiplicação dois a dois com base na propriedade distributiva
+def operacoes_distributivas(A, B, C, D):
+    # Adições
+    resultado_adicao = [
+        A + B, A + C, A + D,
+        B + C, B + D,
+        C + D
+    ]
+
+    # Multiplicações
+    resultado_multiplicacao = [
+        A * B, A * C, A * D,
+        B * C, B * D,
+        C * D
+    ]
+
+    return resultado_adicao, resultado_multiplicacao
+
+# Função para ler quatro valores inteiros
+def ler_valores():
+    try:
+        A = int(input("Digite o valor de A: "))
+        B = int(input("Digite o valor de B: "))
+        C = int(input("Digite o valor de C: "))
+        D = int(input("Digite o valor de D: "))
+        return A, B, C, D
+    except ValueError:
+        print("Por favor, digite valores inteiros.")
+
+# Função principal
+def main():
+    # Ler os valores
+    A, B, C, D = ler_valores()
+
+    # Realizar operações distributivas
+    resultado_adicao, resultado_multiplicacao = operacoes_distributivas(A, B, C, D)
+
+    # Apresentar resultados
+    print("\nResultados das adições:")
+    for resultado in resultado_adicao:
+        print(resultado)
+
+    print("\nResultados das multiplicações:")
+    for resultado in resultado_multiplicacao:
+        print(resultado)
+
+if __name__ == "__main__":
+    main()
